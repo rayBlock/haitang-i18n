@@ -20,7 +20,6 @@ The initial starter 有诗人[这次代码提交](https://github.com/javayhu/hai
 
 - 💻 Frontend: Astro + Tailwind + Shadcn/ui 
 - 🗂️ Database: Turso + Drizzle
-- 
 
 
 ## ⛳ Deployment

@@ -48,8 +48,7 @@ type headerConfig = {
   }[];
 };
 
-// The actual data implementation
-//headerConfig
+// Static data implementation for navigation / header
 export const headerConfig: headerConfig = {
   i18n: [
     {
@@ -97,9 +96,9 @@ export const headerConfig: headerConfig = {
       href: "/",
     },
     {
-      text: "Today",
+      text: "showcase",
       href: "/test",
-      text_en: "Today",
+      text_en: "showcase",
     },
     {
       text: "translation",

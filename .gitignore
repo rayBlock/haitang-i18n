@@ -6,6 +6,9 @@ dist/
 # dependencies
 node_modules/
 
+
+
+
 # locales
 astro_tmp_pages_*
 # logs
@@ -15,6 +18,7 @@ yarn-error.log*
 pnpm-debug.log*
 yarn.lock
 package-lock.json
+
 
 
 # environment variables

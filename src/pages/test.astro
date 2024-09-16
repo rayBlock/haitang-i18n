@@ -3,23 +3,28 @@ import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import SubTitle from "@/partials/SubTitle.astro";
 import { getEntry } from "astro:content";
-import { getLocale } from "astro-i18n-aut";
+import { getLang } from "@/utils/i18n";
+import PageHeader from "@/partials/PageHeader.astro";
 
 export const prerender = true;
 
 const about = await getEntry("test", "test");
- const locale = getLocale(Astro.url);
+const lang = getLang(Astro.url.pathname);
+// console.log("about", about.data.en);
 
-  
-// const i = about.data.en
-// const { Content } = await about.render();
-// const { title, description, meta_title, image } = about.data;
+const { header1, header2, sub, text } = about.data[lang];
+console.log(header1, "header");
+
+const data = {
+  header1: "something",
+  header2: "something2",
+};
 ---
 
 <Base
-  title={ "hello"}
-  meta_title={"hoihoi"}
-  description={"dewcription"}
+  title={"test-page"}
+  meta_title={"testing-page"}
+  description={"description what a testing page is"}
 >
   <section class="section px-4 pt-0 pb-0 my-14 mx-auto">
     <div class="container">
@@ -100,13 +105,15 @@ const about = await getEntry("test", "test");
               </g>
             </g>
           </svg>
-
-         
         </div>
       </div>
-
-      <SubTitle title={about.data.en.header1 } />
-      <div class="mb-14"></div>
+      <div class="text-center">
+        <PageHeader title={header1} />
+        <SubTitle title={header2} />
+        <div class="mb-14"></div>
+        <SubTitle title={sub} />
+      </div>
+      <p>{text}</p>
     </div>
   </section>
 </Base>

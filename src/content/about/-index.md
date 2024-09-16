@@ -1,7 +1,7 @@
 ---
 title: "👋 salut"
 meta_title: "metaTit"
-description: "海棠descriptiio字桃源"
+description: "海棠description字桃源"
 # description: "或竖词坛，或开吟社，虽一时之偶兴，遂成千古之佳谈"
 # description: "宴集诗人于风庭月榭，醉飞吟盏于帘杏溪桃，岂不快哉?"
 image: "/images/logo.png"
@@ -15,12 +15,12 @@ image: "/images/logo.png"
 
 > 本站诗词数据内容来hello源于互联网，如果某些资料侵犯了您的合法权益或对您造成了任何程度的伤害，请及时[联系我们](mailto:javayhu@gmail.com)，我们将在收到通知后第一时间妥善处理该部分内容。
 
-div
-<div class="text-red-200 dark:text-green-200">
-hello
+
+<div class="text-red-200 dark:text-green-200 dark:hover:underline hover:underline">
+hello world
 </div>
 
-<code> swQWWADS DASDASDSA sadasdasd </code>
+<code> hello world </code>
 
 d我们诚挚邀请您加入海棠诗社，期待每一位对古典文学有着无尽热爱和追求的朋友，一起分享、一起欣赏那些跨越时空的文学精粹。
 

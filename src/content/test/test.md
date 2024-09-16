@@ -38,8 +38,8 @@ ja: {
 it: {
     header1: "Intestazione principale",
     header2: "Intestazione secondaria",
-    sub: "Sottotitolo 1",
-    text: "Altro testo",
+    sub: "Sottotitolo uno ",
+    text: "Ancora un po' di testo",
   }
 ar: {
     header1: "العنوان الرئيسي",
