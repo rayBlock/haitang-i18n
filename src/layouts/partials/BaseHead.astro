@@ -3,8 +3,6 @@ import "@/styles/main.scss";
 
 import config from "@/config/config.json";
 
-import Analytics from "@/layouts/Analytics.astro";
-import SpeedInsights from "@vercel/speed-insights/astro";
 import LoadingIndicator from "astro-loading-indicator/component";
 import { ViewTransitions } from "astro:transitions";
 
@@ -95,12 +93,3 @@ const isVercel = import.meta.env.VERCEL == 1;
 <meta property="twitter:image" content={pageImage} />
 <meta property="twitter:card" content="summary_large_image" />
 
-<!-- Vercel Speed Insights -->
-{
-  isVercel && <SpeedInsights />
-}
-
-<!-- Analytics -->
-{
-  isProd && <Analytics />
-}

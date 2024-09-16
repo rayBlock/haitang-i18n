@@ -11,6 +11,7 @@ import { headerConfig } from "@/config/HeaderConfig";
 import BasicScripts from "@/layouts/BasicScripts.astro";
 import { Toaster } from "@/components/ui/sonner";
 import SearchModal from "./helpers/SearchModal";
+import { getLang } from "@/utils/i18n";
 
 // types for frontmatters
 export interface Props {
@@ -26,11 +27,12 @@ export interface Props {
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
 
-// console.log('Base meta:', title, meta_title, description, image, noindex, canonical);
+  const locale = getLang(Astro.url.pathname as any);
+  // console.log(locale, "locale")
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <BaseHead
       title={title}
@@ -44,14 +46,14 @@ const { title, meta_title, description, image, noindex, canonical } =
   <body>
     <TwSizeIndicator />
 
-    <!-- disable showRssFeed showSearch -->
     <Header
-      {...headerConfig}
       isSticky
-      showSearch
+      showSearch = {false}
       showToggleTheme
       showTwitter
       showGithub
+      showLanguageSwitcher
+      {...headerConfig}
     />
 
     <SearchModal client:visible />

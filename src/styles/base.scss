@@ -1,6 +1,4 @@
-html {
-  // @apply md:text-base;
-}
+
 
 body {
   @apply font-normal leading-relaxed bg-body dark:bg-darkmode-body text-text dark:text-darkmode-text;
@@ -24,6 +22,6 @@ code {
   @apply after:border-none;
 }
 
-blockquote > p {
-  @apply my-0 #{!important};
-}
+// blockquote > p {
+//   @apply my-0 #{!important};
+// }

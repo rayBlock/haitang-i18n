@@ -1,6 +1,6 @@
-.bg-gradient {
-  @apply bg-gradient-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%] dark:from-darkmode-theme-light dark:to-darkmode-body;
-}
+// .bg-gradient {
+//   @apply bg-gradient-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%] dark:from-darkmode-theme-light dark:to-darkmode-body;
+// }
 
 .rounded-sm {
   @apply rounded-[4px];
@@ -28,7 +28,7 @@
   background-size: 0% 2px; /* 初始背景大小：宽度为0%，高度为下划线的厚度 */
   background-position: 0% 100%; /* 背景位置：水平方向0%，垂直方向在元素底部 */
   transition: background-size 0.3s ease-in-out; /* 动画效果 */
-  background-image: linear-gradient(to right, #f56565 100%, #f56565 0%); /* 使用线性渐变创建下划线效果 */
+  background-image: linear-gradient(to right, #f56565 100%, #43c9aa 0%); /* 使用线性渐变创建下划线效果 */
 }
 
 .animated-underline:hover,
