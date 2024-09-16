@@ -12,16 +12,15 @@ The initial starter 有诗人[这次代码提交](https://github.com/javayhu/hai
 - 🔍 - 📝 站响应式布局，兼容移动端，支持暗黑模式，响应速度快
 - 🔍 - 📝 Responsive & Dark Design
 
-
+- 🌏 - Translation using [astro-i18n-aut](https://github.com/jlarmstrongiv/astro-i18n-aut)
+- 🌏 - 我们使用 [astro-i18n-aut](https://github.com/jlarmstrongiv/astro-i18n-aut) 对页面进行乘法运算 
 
 
 ## ✨ Tech Stacks
 
 - 💻 Frontend: Astro + Tailwind + Shadcn/ui 
 - 🗂️ Database: Turso + Drizzle
-
-<!-- - ⭐ Web3: TBD
-- 📱 coming soon -->
+- 
 
 
 ## ⛳ Deployment

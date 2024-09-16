@@ -1,8 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
 
-
-
 export interface Props {
   currentLang: string;
   pathName: string;
@@ -13,11 +11,6 @@ export interface Props {
 }
 
 const { currentLang, pathName, languages } = Astro.props;
-console.log(currentLang, "currentLang", pathName);
-
-// const currentLanguage =
-//   languages.find((lang) => lang.link === `/${currentLang}`)?.nativeName ||
-//   "Language";
 ---
 
 <div class="language-picker">
@@ -31,7 +24,6 @@ console.log(currentLang, "currentLang", pathName);
       name="tabler:language-katakana"
       class="w-6 h-6 md:w-5 md:h-5 md:inline-block mr-2"
     />
-    <!-- <span>{currentLanguage}</span> -->
     <Icon
       name="tabler:chevron-down"
       class="w-3.5 h-3.5 ml-0.5 hidden md:inline"
@@ -44,14 +36,19 @@ console.log(currentLang, "currentLang", pathName);
   >
     {
       languages.map(({ nativeName, link }) => {
-
         return (
           <li role="menuitem">
             <a
               class={`first:rounded-t last:rounded-b py-2 px-5 block whitespace-no-wrap hover:text-dark dark:hover:text-darkmode-dark md:hover:bg-gray-100 dark:hover:bg-gray-800 ${
                 link === `/${currentLang}` ? "aw-link-active" : ""
               }`}
-              href={link}
+              href={
+                pathName === "/" || pathName.length <= 3
+                  ? link
+                  : pathName.length > 3 && currentLang === "en"
+                    ? `${link}${pathName}`
+                    : `${link}${pathName.slice(3)}`
+              }
             >
               {nativeName}
             </a>

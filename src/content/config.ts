@@ -7,14 +7,18 @@ const commonPageTypes = z.object({
   text: z.string(),
 });
 const test = defineCollection({
+  type: "content",
   schema: z.object({
     title: z.string(),
     meta_title: z.string().optional(),
     description: z.string().optional(),
     en: commonPageTypes,
-    // es: z.object({}),
+    es: commonPageTypes,
     fr: commonPageTypes,
-    // de: z.object({}),
+    de: commonPageTypes,
+    it: commonPageTypes,
+    ja: commonPageTypes,
+    zh: commonPageTypes,
   }),
 });
 

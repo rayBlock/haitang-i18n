@@ -11,10 +11,10 @@ export const prerender = true;
 
 const lang = getLang(Astro.url.pathname);
 
-const text = await getEntry("test", "test");
+const text:any = await getEntry("test", "test");
 
 
-const {header1, header2, } = text.data[lang]
+// const {header1, header2, } = text.data[lang]
 
 
 ---
@@ -23,7 +23,7 @@ const {header1, header2, } = text.data[lang]
   <section class="section">
     <div>
       <div style={{fontSize:'55px'}}>
-          {header1} {header2}
+          <!-- {header1} {header2} -->
           <button class="btn" onclick="console.log('t', 'h2')">hello btn</button>
         <!-- show all meta env keys and values in the footer -->
         <!-- <pre

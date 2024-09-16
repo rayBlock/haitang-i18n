@@ -46,7 +46,7 @@ export default defineConfig({
     i18n({
       locales,
       defaultLocale,
-      exclude: ["/excluded", "/api/*"],
+      // exclude: ["/excluded", "/api/*"],
     }),
     sitemap({
       i18n: {

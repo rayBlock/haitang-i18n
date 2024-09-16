@@ -7,7 +7,6 @@ import Footer from "@/partials/Footer.astro";
 import Header from "@/partials/Header.astro";
 import { footerConfig } from "@/config/FooterConfig";
 import { headerConfig } from "@/config/HeaderConfig";
-// import SearchModal from "@/layouts/helpers/SearchModal";
 import BasicScripts from "@/layouts/BasicScripts.astro";
 import { Toaster } from "@/components/ui/sonner";
 import SearchModal from "./helpers/SearchModal";
@@ -28,7 +27,6 @@ const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
 
   const locale = getLang(Astro.url.pathname as any);
-  // console.log(locale, "locale")
 ---
 
 <!doctype html>

@@ -12,7 +12,6 @@ import { UI } from "@/utils/config";
 
   // dark mode theme
   function applyTheme(theme) {
-    console.log("applyTheme", theme);
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
    
@@ -162,7 +161,6 @@ import { UI } from "@/utils/config";
   window.onpageshow = onPageShow;
 
   document.addEventListener("astro:after-swap", () => {
-    console.log("astro:after-swap, init theme");
     initTheme();
     onLoad();
     onPageShow();

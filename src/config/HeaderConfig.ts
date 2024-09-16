@@ -116,18 +116,18 @@ export const headerConfig: headerConfig = {
       text_zh: "翻譯",
       links: [
         {
-          text: "some",
-          href: "/some1",
+          text: "info",
+          href: "/info",
           text_en: "some",
         },
         {
-          text: "some ohter",
-          href: "/some2",
+          text: "test",
+          href: "/test",
           text_en: "some",
         },
         {
-          text: "some ohter",
-          href: "/some3",
+          text: "about",
+          href: "/about",
           text_en: "some",
         },
       ],
@@ -137,10 +137,10 @@ export const headerConfig: headerConfig = {
   ],
 
   actions: [
-    {
-      text: "Search",
-      href: "/search",
-      target: "_self",
-    },
+    // {
+    //   text: "Search",
+    //   href: "/search",
+    //   target: "_self",
+    // },
   ],
 };
