@@ -36,7 +36,6 @@
     "astro-icon": "^1.1.0",
     "astro-loading-indicator": "^0.4.0",
     "astro-sst": "2.43.5",
-    "better-sqlite3": "^9.5.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
@@ -63,10 +62,10 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "sharp": "^0.33.5",
     "@iconify-json/tabler": "^1.1.109",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/better-sqlite3": "^7.6.9",
     "@types/marked": "^5.0.2",
     "@types/node": "20.11.16",
     "@types/react": "18.2.53",

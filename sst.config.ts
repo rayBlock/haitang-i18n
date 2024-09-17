@@ -11,10 +11,17 @@ export default $config({
   async run() {
     new sst.aws.Astro("hoiTangStack", {
       // domain: ""
-
+    
       transform: {
-        // assets: {},
-        server: { architecture: "arm64" },
+        assets: {
+          access: "public",
+        },
+        server: {
+          architecture: "arm64",
+          nodejs: {
+            install: ["sharp"],
+          },
+        },
       },
     });
   },

@@ -1,29 +1,27 @@
 export const footerConfig = {
     links: [
-        {
-            title: '网站导航',
-            links: [
-                // { text: '诗词 + AI', href: '/ai' },
-                { text: '每日一诗', href: '/today' },
-                // { text: '所有诗集', href: '/collections' },
-                // { text: '所有朝代', href: '/dynasties' },
-                // { text: '所有诗人', href: '/authors' },
-                // { text: '所有诗词', href: '/works' },
-            ],
-        },
-        {
-            title: '热门诗集',
-            links: [
-                { text: '唐诗三百首', href: '/collections/1' },
-            ],
-        },
+        // {
+        //     title: '网站导航',
+        //     links: [
+        //         { text: '诗词 + AI', href: '/ai' },
+        //         { text: '每日一诗', href: '/today' },
+        //         { text: '所有诗集', href: '/collections' },
+        //         { text: '所有朝代', href: '/dynasties' },
+        //         { text: '所有诗人', href: '/authors' },
+        //         { text: '所有诗词', href: '/works' },
+        //     ],
+        // },
+        // {
+        //     title: '热门诗集',
+        //     links: [
+        //         { text: '唐诗三百首', href: '/collections/1' },
+        //     ],
+        // },
        
     ],
     secondaryLinks: [
         { text: '服务条款', href: '/terms-of-service' },
         { text: '隐私政策', href: '/privacy-policy' },
-        { text: '站点地图', href: '/sitemap-index.xml' },
-        { text: '关于诗社', href: '/about' },
     ],
     socialLinks: [
         // { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/javayhu' },
