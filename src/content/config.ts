@@ -19,6 +19,9 @@ const test = defineCollection({
     it: commonPageTypes,
     ja: commonPageTypes,
     zh: commonPageTypes,
+    th: commonPageTypes,
+    hi: commonPageTypes,
+    ko: commonPageTypes,
   }),
 });
 
