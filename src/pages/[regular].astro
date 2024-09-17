@@ -2,64 +2,33 @@
 import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import PageHeader from "@/partials/PageHeader.astro";
-import { getLang } from "@/utils/i18n";
-
 
 export const prerender = false;
 const COLLECTION_FOLDER = "pages";
 const pages = await getSinglePage(COLLECTION_FOLDER);
-const lang = getLang(Astro.url.pathname);
-// get static paths for all pages
- export async function getStaticPaths() {
-
- }
-
-// const loader = () =>{
-
-  const paths = pages.map((page) => ({
-    
-    params: {
-      regular: page.slug,
-    },
-    props: { page },
-  }));
-  
-// ));
-// console.log( "page")
-// return paths
-// }
-
-  // console.log(paths, "paths");
   
 const astropath = Astro.url.pathname;
 
-const nr = astropath === "/privacy-policy" || astropath.slice(3, astropath.length) === "/privacy-policy" ? 0 : 1
-console.log(astropath.slice(1, astropath.length), "astro slicedsp");
+const pageNr = astropath === "/privacy-policy" || astropath.slice(3, astropath.length) === "/privacy-policy" ? 0 : 1;
 
-
-// console.log(paths, "lodader");
-// const { page } = Astro.props;
-console.log(nr, "nr");
-
-// const { title, meta_title, description, image } = loader.data;
-const { Content } = await pages[nr].render();
+const { title, meta_title, description, image } = pages[pageNr].data;
+const { Content } = await pages[pageNr].render();
 ---
 {
 
 <Base
-  title={"title"}
-  meta_title={"meta_title"}
-  description={"description"}
-  image={'./public/favicon.png'}
+  title={title}
+  meta_title={meta_title}
+  description={description}
+  image={image}
 >
-  <PageHeader title={"title"} />
+  <PageHeader title={title} />
   <section class="section-sm">
     <div class="container">
       <div class="row justify-center">
         <div class="lg:col-10">
           <div class="content">
             <Content />
-             <!-- {pages[0].body} -->
           </div>
         </div>
       </div>
