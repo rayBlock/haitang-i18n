@@ -11,8 +11,21 @@ export default $config({
   async run() {
     new sst.aws.Astro("hoiTangStack",{
       transform: {
+          assets: {
+
+          },
+          // imageOptimization: {
+            // architecture: 'arm64',
+
+            // nodejs: {
+            //   install: ["sharp"]
+            // },
+          // },
           server: {
-            architecture: 'arm64'
+            architecture: 'arm64',
+            // nodejs:{
+            //   install: ["sharp"]
+            // }
           }
       }
     });

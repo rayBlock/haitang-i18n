@@ -2,8 +2,6 @@
 import Base from "@/layouts/Base.astro";
 import { getLang } from "@/utils/i18n";
 
-export const prerender = true;
-
 const lang = getLang(Astro.url.pathname);
 
 const text = {

@@ -1,24 +1,17 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { markdownify } from "@/lib/utils/textConverter";
 import SubTitle from "@/partials/SubTitle.astro";
 import { getEntry } from "astro:content";
 import { getLang } from "@/utils/i18n";
 import PageHeader from "@/partials/PageHeader.astro";
 
-export const prerender = true;
+export const prerender = false;
 
 const about = await getEntry("test", "test");
 const lang = getLang(Astro.url.pathname);
-// console.log("about", about.data.en);
 
 const { header1, header2, sub, text } = about.data[lang];
-console.log(header1, "header");
 
-const data = {
-  header1: "something",
-  header2: "something2",
-};
 ---
 
 <Base

@@ -5,7 +5,6 @@ import { Picture } from "astro:assets";
 import { getEntry } from "astro:content";
 
 const hero = await getEntry("sections", "landing");
-console.log(hero.data, "hero data ");
 
 const lang = getLang(Astro.url.pathname);
 const link1 = hero.data.primaryButton.link;

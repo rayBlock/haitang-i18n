@@ -3,7 +3,7 @@ import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import PageHeader from "@/partials/PageHeader.astro";
 
-export const prerender = true;
+export const prerender = false;
 
 // get static paths for all pages
 export async function getStaticPaths() {

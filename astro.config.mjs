@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import AutoImport from "astro-auto-import";
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
@@ -36,6 +36,7 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: {
+    // service: passthroughImageService(),
     entrypoint: "astro/assets/services/sharp",
     config: {
       limitInputPixels: false,
@@ -46,7 +47,8 @@ export default defineConfig({
     i18n({
       locales,
       defaultLocale,
-      // exclude: ["/excluded", "/api/*"],
+       exclude: ["pages/api/**/*"],
+       redirectDefaultLocale: true,
     }),
     sitemap({
       i18n: {
@@ -82,7 +84,6 @@ export default defineConfig({
     ],
     shikiConfig: {
       theme: {
-        light: "dracula",
         dark: "github-dark",
       },
       wrap: true,
