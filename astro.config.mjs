@@ -11,7 +11,10 @@ import icon from "astro-icon";
 import aws from "astro-sst";
 import { i18n, filterSitemapByDefaultLocale } from "astro-i18n-aut/integration";
 
-// also need to adjust in i18n file
+
+// TODO: --changeDefaultLocale
+
+// also need to adjust in i18n file -> utils/18n.ts
 const defaultLocale = "en";
 const locales = {
   en: "en-US", // the `defaultLocale`
@@ -22,6 +25,7 @@ const locales = {
   ja: "ja-JP",
   zh: "zh-CN",
   th: "th-TH", 
+  hi: "hi-IN",
 };
 
 export default defineConfig({

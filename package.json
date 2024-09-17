@@ -5,14 +5,16 @@
   "author": "ray",
   "license": "MIT",
   "scripts": {
-    "build": "astro build",
     "dev": " astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "format": "prettier -w ./src",
     "generate": "drizzle-kit generate",
     "hide-toolbar": "astro preferences disable devToolbar",
-    "preview": "astro preview",
     "show-toolbar": "astro preferences enable devToolbar",
-    "studio": "drizzle-kit studio"
+    "studio": "drizzle-kit studio",
+    "deploy": "npx sst deploy --stage production",
+    "remove-sst": "npx sst remove --stage production"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.1.1",

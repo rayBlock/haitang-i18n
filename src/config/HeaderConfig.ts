@@ -1,4 +1,12 @@
 // Type for multilingual text
+type langSegment = {
+  language: string;
+  nativeName: string;
+  link: string;
+}
+
+// TODO: --add languages here in this file
+
 
 export type linkSegment = {
   text: string;
@@ -31,15 +39,12 @@ export type translatedlink = {
   text_hi?: string;
   text_th?: string;
   text_zh?: string;
+
 };
 
 // Type for the header configuration, including actions
 type headerConfig = {
-  i18n: {
-    language: string;
-    nativeName: string;
-    link: string;
-  }[];
+  i18n: langSegment[];
   links: translatedlink[];
   actions?: {
     text: string;
@@ -48,7 +53,9 @@ type headerConfig = {
   }[];
 };
 
-// Static data implementation for navigation / header
+//  data for navigation -> <Header>
+
+
 export const headerConfig: headerConfig = {
   i18n: [
     {
@@ -86,6 +93,11 @@ export const headerConfig: headerConfig = {
       nativeName: "日本語",
       link: "/ja",
     },
+    {
+      language: "Thai",
+      nativeName: "ไทย",
+      link: "/th",
+    }
   ],
 
   links: [
@@ -94,11 +106,28 @@ export const headerConfig: headerConfig = {
       text_en: "Home",
       text_fr: "Accueil",
       href: "/",
+      text_de: "Startseite",
+      text_es: "Inicio",
+      text_ja: "ホーム",
+      text_it: "Inizio",
+      text_ar: "الرئيسية",
+      text_hi: "होम",
+      text_th: "หน้าแรก",
+      text_zh: "首页",
     },
     {
       text: "showcase",
       href: "/test",
       text_en: "showcase",
+      text_fr: "montrer",
+      text_de: "Anzeigen",
+      text_es: "mostrar",
+      text_ja: "表示",
+      text_it: "mostrare",
+      text_ar: "عرض",
+      text_hi: "दिखाएं",
+      text_th: "แสดง",
+      text_zh: "展示",
     },
     {
       text: "translation",
@@ -115,19 +144,32 @@ export const headerConfig: headerConfig = {
       text_zh: "翻譯",
       links: [
         {
-          text: "info",
-          href: "/info",
-          text_en: "some",
-        },
-        {
           text: "test",
           href: "/test",
-          text_en: "some",
+          text_en: "test page",
+          text_fr: "page de test",
+          text_de: "Testseite",
+          text_es: "página de prueba",
+          text_ja: "テストページ",
+          text_it: "Pagina di test",
+          text_ar: "صفحة الاختبار",
+          text_hi: "परीक्षण पृष्ठ",
+          text_th: "หน้าทดสอบ",
+          text_zh: "测试页面",
         },
         {
           text: "about",
           href: "/about",
-          text_en: "some",
+          text_en: "about",
+          text_fr: "a propos",
+          text_de: "Über",
+          text_es: "acerca de",
+          text_ja: "約",
+          text_it: "di",
+          text_ar: "حول",
+          text_hi: "के बारे में",
+          text_th: "เกี่ยวกับ",
+          text_zh: "关于",
         },
       ],
 
@@ -135,11 +177,22 @@ export const headerConfig: headerConfig = {
     },
   ],
 
+  // actions are btns on the right side in the header
   actions: [
     // {
     //   text: "Search",
     //   href: "/search",
     //   target: "_self",
     // },
+  // {
+  //   text: "Login",
+  //   href: "/login",
+  //   target: "_self",
+  // },
+  // {
+  //   text: "The OG",
+  //   href: "https://github.com/javayhu/haitang",
+  //   target: "_self",
+  // }
   ],
 };

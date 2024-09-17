@@ -42,10 +42,16 @@ pnpm i
 pnpm dev
 ```
 
-### 👉 Build Command
+### 👉 Deploy Command
+
+Deploys to production. Creates an url for you. 
+Add a domain to aws route53 to bux a domain and put that domain name in sst.config
+
+部署到生产环境。为您创建一个 url。
+在 aws route53 中添加一个域，以 bux 一个域，并在 sst.config 中输入该域名
 
 ```bash
-pnpm build
+pnpm run deploy
 ```
 
 <!-- 
@@ -73,7 +79,7 @@ Thanks to [西窗烛](https://www.xczim.com/)
 
 MIT
 
-<!-- Copyright (c) 2024 - Present, Designed & Developed by [javayhu](https://x.com/javayhu) -->
 
 **Code License:** Released under the [MIT](LICENSE) license.
+Copyright (c) 2024 - Present, Designed & Developed by [javayhu](https://x.com/javayhu) with some tweaking
 

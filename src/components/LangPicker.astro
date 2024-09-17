@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-
+import { DEFAULT_LOCALE } from "../utils/i18n";
 export interface Props {
   currentLang: string;
   pathName: string;
@@ -38,16 +38,38 @@ const { currentLang, pathName, languages } = Astro.props;
       languages.map(({ nativeName, link }) => {
         return (
           <li role="menuitem">
+            {/* TODO: --changeDefaultLocale
+                            all the ones in the href "en" needs to be your default
+                              example: "de" or "fr" or "th"  
+
+                              
+                              
+                              */}
             <a
               class={`first:rounded-t last:rounded-b py-2 px-5 block whitespace-no-wrap hover:text-dark dark:hover:text-darkmode-dark md:hover:bg-gray-100 dark:hover:bg-gray-800 ${
                 link === `/${currentLang}` ? "aw-link-active" : ""
               }`}
               href={
-                pathName === "/" || pathName.length <= 3
-                  ? link
-                  : pathName.length > 3 && currentLang === "en"
-                    ? `${link}${pathName}`
-                    : `${link}${pathName.slice(3)}`
+                pathName.length <= 3 && link === "/en"
+                  ? // default lang goes to /
+                    "/"
+                  : // not default langs go to /fr, /th ...
+                    pathName.length <= 3
+                    ? link
+                    : // if we're on a page
+                      pathName.length > 3 &&
+                        currentLang === "en" &&
+                        link !== "/en"
+                      ? // we're english and routing to not english
+                        // default lang we dont need to slice away the first 3
+                        `${link}${pathName}`
+                      : pathName.length > 3 &&
+                          currentLang !== "en" &&
+                          link === "/en"
+                        ? // we're not english and routing to english
+                          `${pathName.slice(3)}`
+                        : // exchange the 3 the current lang "/fr" for link lang example: "/de"
+                          `${link}${pathName.slice(3)}`
               }
             >
               {nativeName}
@@ -58,45 +80,3 @@ const { currentLang, pathName, languages } = Astro.props;
     }
   </ul>
 </div>
-<!-- 
-<script>
-  function setupLanguagePicker() {
-    const toggleButton = document.getElementById("language-toggle");
-    const menu = document.getElementById("language-menu");
-
-    if (toggleButton && menu) {
-      toggleButton.addEventListener("click", () => {
-        const expanded =
-          toggleButton.getAttribute("aria-expanded") === "true" || false;
-        toggleButton.setAttribute("aria-expanded", (!expanded).toString());
-        menu.classList.toggle("hidden");
-      });
-
-      // Close the menu when clicking outside
-      document.addEventListener("click", (event) => {
-        if (
-          !toggleButton.contains(event.target as Node) &&
-          !menu.contains(event.target as Node)
-        ) {
-          menu.classList.add("hidden");
-          toggleButton.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      // Handle keyboard navigation
-      menu.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-          menu.classList.add("hidden");
-          toggleButton.setAttribute("aria-expanded", "false");
-          toggleButton.focus();
-        }
-      });
-    }
-  }
-
-  // Run the setup function when the DOM is fully loaded
-  document.addEventListener("DOMContentLoaded", setupLanguagePicker);
-
-  // If you're using this in a dynamically loaded component, you might also want to run it on astro:page-load
-  document.addEventListener("astro:page-load", setupLanguagePicker);
-</script> -->
