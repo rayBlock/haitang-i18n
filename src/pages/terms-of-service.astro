@@ -6,13 +6,9 @@ import PageHeader from "@/partials/PageHeader.astro";
 export const prerender = false;
 const COLLECTION_FOLDER = "pages";
 const pages = await getSinglePage(COLLECTION_FOLDER);
-  
-const astropath = Astro.url.pathname;
 
-const pageNr = astropath === "/privacy-policy" || astropath.slice(3, astropath.length) === "/privacy-policy" ? 0 : 1;
-
-const { title, meta_title, description, image } = pages[pageNr].data;
-const { Content } = await pages[pageNr].render();
+const { title, meta_title, description, image } = pages[1].data;
+const { Content } = await pages[1].render();
 ---
 {
 

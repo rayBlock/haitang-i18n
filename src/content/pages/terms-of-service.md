@@ -1,8 +1,7 @@
 ---
 title: "Terms of Services"
-id: 0
-meta_title: ""
-description: "this is meta description"
+meta_title: "TermsOfService"
+description: "terms of service"
 draft: false
 ---
 

@@ -20,8 +20,8 @@ export const footerConfig = {
        
     ],
     secondaryLinks: [
-        { text: '服务条款', href: '/terms-of-service' },
-        { text: '隐私政策', href: '/privacy-policy' },
+        { text: 'Terms of service', href: '/terms-of-service' },
+        { text: 'Privacy', href: '/privacy-policy' },
     ],
     socialLinks: [
         // { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/javayhu' },
